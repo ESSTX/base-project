@@ -760,15 +760,17 @@ span {
 .warn-device {
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 80px;
   background: rgba(255, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, var(--tl5));
   overflow: hidden;
+  border-radius: 8px;
   backdrop-filter: saturate(0%) blur(10px);
   box-sizing: border-box;
-  bottom: 0;
   transition: all 0.5s;
   z-index: 1;
+  left: 0;
+  bottom: 0px;
 }
 
 .warn-device-inside {
@@ -788,7 +790,7 @@ span {
 
 @media (min-width: 800px) {
   .warn-device {
-    bottom: -50px;
+    bottom: -80px;
   }
 }
 
@@ -871,6 +873,7 @@ span {
 
 .social-icon-wrapper {
   transition: all .2s;
+  user-select: none;
 }
 
 .social-icon-wrapper:hover {

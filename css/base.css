@@ -561,6 +561,39 @@ span {
 }
 
 /*
+    Display
+*/
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+/*
+    Position
+*/
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/*
+    Top
+*/
+.top1 {
+  top: 1rem;
+}
+
+/*
 ===========================================================================================
     Base project
 ===========================================================================================
@@ -598,7 +631,7 @@ span {
   background: rgba(255, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  backdrop-filter: saturate(0%);
+  backdrop-filter: saturate(0%) blur(10px);
   box-sizing: border-box;
   bottom: 0;
   transition: all 0.5s;
@@ -625,7 +658,6 @@ span {
     bottom: -50px;
   }
 }
-
 
 .gradient {
   --size: calc(50vh + 50vw);

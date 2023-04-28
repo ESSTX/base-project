@@ -82,6 +82,17 @@ function isNotDesktop() {
   });
 }
 
+function wBInChrome() {
+  if (currentBrowser() != "Chrome") {
+    const warnbrowser = document.createElement("span");
+    warnbrowser.classList.add('fixed');
+    warnbrowser.classList.add('top1');
+    warnbrowser.classList.add('white');
+    warnbrowser.appendChild(document.createTextNode("Works better in Chrome"));
+    document.body.appendChild(warnbrowser);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
   for (let i = 0; i < textElements.length; i++) {
@@ -100,6 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       element.classList.remove('loading-font');
       element.classList.add('white');
+
+      wBInChrome();
     }).catch((error) => {
       console.error(`Failed to load font: ${error}`);
     });
@@ -108,5 +121,5 @@ document.addEventListener("DOMContentLoaded", function () {
   if (isNotDesktop()) {
     document.querySelector('.warn-device-inside').style.display = "flex";
   }
-  console.log(currentBrowser());
+  //console.log(currentBrowser());
 });

@@ -66,6 +66,8 @@ body {
 */
 h1, h2, h3, h4, h5, h6, p, span, sup, sub, small {
   user-select: none;
+  color: transparent;
+  transition: color 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -162,7 +164,6 @@ span {
 /*
     Content box&Flex
 */
-
 .content {
   width: 100%;
   height: 100%;
@@ -236,7 +237,7 @@ span {
 }
 
 /*
-    Margin sides
+    Margin top
 */
 .martop-1{
   margin-top: var(--ms1);
@@ -250,6 +251,9 @@ span {
   margin-top: var(--ms3);
 }
 
+/*
+    Margin bottom
+*/
 .marbot-1{
   margin-bottom: var(--ms1);
 }
@@ -262,6 +266,24 @@ span {
   margin-bottom: var(--ms3);
 }
 
+/*
+    Margin top bottom
+*/
+.martb-1{
+  margin: var(--ms1) 0 var(--ms1) 0;
+}
+
+.martb-2{
+  margin: var(--ms2) 0 var(--ms2) 0;
+}
+
+.martb-3{
+  margin: var(--ms3) 0 var(--ms3) 0;
+}
+
+/*
+    Margin left
+*/
 .marleft-1{
   margin-left: var(--ms1);
 }
@@ -274,6 +296,9 @@ span {
   margin-left: var(--ms3);
 }
 
+/*
+    Margin right
+*/
 .marright-1{
   margin-right: var(--ms1);
 }
@@ -284,6 +309,21 @@ span {
 
 .marright-3{
   margin-right: var(--ms3);
+}
+
+/*
+    Margin left right
+*/
+.marlr-1{
+  margin: 0 var(--ms1) 0 var(--ms1);
+}
+
+.marlr-2{
+  margin: 0 var(--ms2) 0 var(--ms2);
+}
+
+.marlr-3{
+  margin: 0 var(--ms3) 0 var(--ms3);
 }
 
 /*
@@ -302,7 +342,7 @@ span {
 }
 
 /*
-    Padding sides
+    Padding top
 */
 .padtop-1{
   padding-top: var(--ps1);
@@ -316,6 +356,9 @@ span {
   padding-top: var(--ps3);
 }
 
+/*
+    Padding bottom
+*/
 .padbot-1{
   padding-bottom: var(--ps1);
 }
@@ -328,6 +371,24 @@ span {
   padding-bottom: var(--ps3);
 }
 
+/*
+    Padding top bottom
+*/
+.padtb-1{
+  padding: var(--ps1) 0 var(--ps1) 0;
+}
+
+.padtb-2{
+  padding: var(--ps2) 0 var(--ps2) 0;
+}
+
+.padtb-3{
+  padding: var(--ps3) 0 var(--ps3) 0;
+}
+
+/*
+    Padding left
+*/
 .padleft-1{
   padding-left: var(--ps1);
 }
@@ -340,6 +401,9 @@ span {
   padding-left: var(--ps3);
 }
 
+/*
+    Padding right
+*/
 .padright-1{
   padding-right: var(--ps1);
 }
@@ -350,6 +414,21 @@ span {
 
 .padright-3{
   padding-right: var(--ps3);
+}
+
+/*
+    Padding left right
+*/
+.padlr-1{
+  padding: 0 var(--ps1) 0 var(--ps1);
+}
+
+.padlr-2{
+  padding: 0 var(--ps2) 0 var(--ps2);
+}
+
+.padlr-3{
+  padding: 0 var(--ps3) 0 var(--ps3);
 }
 
 /*
@@ -383,7 +462,6 @@ span {
     Base project
 ===========================================================================================
 */
-
 .warn-device {
   position: fixed;
   width: 100%;
@@ -481,10 +559,8 @@ span {
 }
 
 .glow-divider {
-	width: 100%;
+	width: 90%;
 	height: 1px;
-  margin-left: 18rem;
-  margin-right: 18rem;
 	background-color: rgba(255, 255, 255, 0.1);
 	position: relative;
 }

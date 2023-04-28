@@ -94,7 +94,7 @@ function wBInChrome() {
 }
 
 function initPage() {
-  let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
+  let textElements = $('h1, h2, h3, h4, h5, h6, p, span');
   const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
     style: "normal",
     weight: "400",
@@ -113,7 +113,7 @@ function initPage() {
     console.error(`Failed to load font: ${error}`);
   });
   if (isNotDesktop()) {
-    document.querySelector('.warn-device-inside').style.display = "flex";
+    $('.warn-device-inside').css('display', 'flex');
   }
 }
 

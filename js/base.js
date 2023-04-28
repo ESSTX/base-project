@@ -103,11 +103,10 @@ function initPage() {
   font.load().then(() => {
     wBInChrome();
     document.fonts.add(font);
-    for (let i = 0; i < textElements.length; i++) {
-      const element = textElements[i];
+    _.forEach(textElements, function(element) {
       element.classList.remove('loading-font');
       element.classList.add('white');
-    }
+    });
     textElements = [];
   }).catch((error) => {
     console.error(`Failed to load font: ${error}`);
@@ -119,15 +118,31 @@ function initPage() {
 
 document.addEventListener("DOMContentLoaded", function () {
   let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
-  for (let i = 0; i < textElements.length; i++) { textElements[i].classList.add('loading-font'); }
+  for (let i = 0; i < textElements.length; i++) {
+    textElements[i].classList.add('loading-font');
+  }
   textElements = [];
 
-  var jqueryScript = document.createElement("script");
-  jqueryScript.setAttribute("src", "https://code.jquery.com/jquery-3.6.4.min.js");
-  jqueryScript.setAttribute("async", true);
-  document.head.appendChild(jqueryScript);
-  
-  jqueryScript.addEventListener('load', function() {
-    initPage();
-  });
+  let libs = [
+    "https://code.jquery.com/jquery-3.6.4.min.js",
+    "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+  ];
+
+  let scriptElements = [];
+  let downloadedCount = 0;
+
+  for (let i = 0; i < libs.length; i++) {
+    var scr = document.createElement("script");
+    scr.setAttribute("src", libs[i]);
+    scr.setAttribute("async", true);
+    document.head.appendChild(scr);
+    scriptElements.push(scr);
+
+    scr.addEventListener('load', function () {
+      downloadedCount++;
+      if (downloadedCount === libs.length) {
+        initPage();
+      }
+    });
+  }
 });

@@ -67,7 +67,6 @@ body {
   background-size: 300% 100%;
   animation: loading-font-anim 2s linear 0s infinite normal forwards;
   border-radius: 0.4rem;
-  text-decoration: none;
 }
 
 body {

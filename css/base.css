@@ -3,7 +3,7 @@
     Author: ESSTX
     just s1mpl3 base css for my projects
 
-    ps how to fix fout...🤦
+    ps idk how to fix fout...🤦
 ===========================================================================================
 */
 
@@ -14,7 +14,7 @@
 */
 
 /*
-    ms - margin size, ps - padding size, tl - transparent level
+    ms - margin size, ps - padding size, tl - transparent level ,br - border radius
 */
 :root {
   /* margin */
@@ -35,12 +35,18 @@
   --tl3: 0.3;
   --tl4: 0.2;
   --tl5: 0.1;
+  /* border */
+}
+
+* {
+  user-select: none;
 }
 
 body {
   font-family: Arial, sans-serif;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes loading-font-anim {
@@ -87,7 +93,6 @@ span,
 sup,
 sub,
 small {
-  user-select: none;
   color: transparent;
   transition: color 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
@@ -256,6 +261,20 @@ span {
 
 .align-baseline {
   align-items: baseline;
+}
+
+.flex-col-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 /*
@@ -728,6 +747,48 @@ span {
 
 /*
 ===========================================================================================
+    Input
+===========================================================================================
+*/
+input[type="button"] {
+  background-color: rgba(255, 255, 255, var(--tl5));
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: all 1s;
+
+  width: auto;
+  height: auto;
+}
+
+input[type="button"].loading-font {
+  width: auto;
+  height: auto;
+  color: transparent;
+  backdrop-filter: none;
+}
+
+input[type="button"]:hover {
+  background-color: rgba(255, 255, 255, var(--tl4));
+}
+
+input[type="button"]:active {
+  background-color: rgba(255, 255, 255, var(--tl3));
+}
+
+input[type="button"]:focus {
+  outline: none;
+}
+
+/*
+===========================================================================================
     Base project
 ===========================================================================================
 */
@@ -747,6 +808,7 @@ span {
 
 .glass {
   width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.56);
   border: 1px solid #ffffff0e;
   overflow: hidden;
@@ -755,6 +817,11 @@ span {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
   box-sizing: border-box;
   transition: all 0.1s;
+}
+
+.page {
+  width: 100%;
+  height: 40rem;
 }
 
 .warn-device {
@@ -781,6 +848,11 @@ span {
   display: none;
 }
 
+.footer {
+  display: none;
+}
+
+
 @media (min-width: 1100px) {
   .glass {
     width: 60rem;
@@ -791,6 +863,15 @@ span {
 @media (min-width: 800px) {
   .warn-device {
     bottom: -80px;
+  }
+}
+
+@media (min-width: 680px) {
+  .glass {
+    height: auto;
+  }
+  .footer {
+    display: flex;
   }
 }
 
@@ -882,7 +963,42 @@ span {
   animation-direction: alternate;
 }
 
+.arrow {
+  filter: invert(100%);
+  opacity: 0.2;
+}
+
+.arrow:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.right-dir {
+  transform: rotate(90deg);
+}
+
+.left-dir {
+  transform: rotate(-90deg);
+}
+
 @keyframes zoomblur {
+  0% {
+    transform: scale(1.2);
+    filter: blur(2px);
+  }
+
+  50% {
+    transform: scale(1.3);
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: scale(1.1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes right-arrow {
   0% {
     transform: scale(1.2);
     filter: blur(2px);

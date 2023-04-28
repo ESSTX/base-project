@@ -1,7 +1,7 @@
-function currentBrowser() {
+const currentBrowser = () => {
   const userAgent = navigator.userAgent.toLowerCase();
   let browser;
-
+  
   switch (true) {
     case /edge/i.test(userAgent):
       browser = 'Edge';
@@ -53,7 +53,7 @@ function currentBrowser() {
   return browser;
 }
 
-function isNotDesktop() {
+const isNotDesktop = () => {
   const toMatch = [
     /Android/i,
     /webOS/i,
@@ -82,7 +82,7 @@ function isNotDesktop() {
   });
 }
 
-function wBInChrome() {
+const wBInChrome = () => {
   if (currentBrowser() != "Chrome") {
     const warnbrowser = document.createElement("span");
     warnbrowser.classList.add('fixed');
@@ -93,7 +93,7 @@ function wBInChrome() {
   }
 }
 
-function initPage() {
+const initPage = () => {
   let textElements = $('h1, h2, h3, h4, h5, h6, p, span');
   const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
     style: "normal",
@@ -103,7 +103,7 @@ function initPage() {
   font.load().then(() => {
     wBInChrome();
     document.fonts.add(font);
-    _.forEach(textElements, function(element) {
+    _.forEach(textElements, (element) => {
       element.classList.remove('loading-font');
       element.classList.add('white');
     });
@@ -116,7 +116,7 @@ function initPage() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
   for (let i = 0; i < textElements.length; i++) {
     textElements[i].classList.add('loading-font');
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(scr);
     scriptElements.push(scr);
 
-    scr.addEventListener('load', function () {
+    scr.addEventListener('load', () => {
       downloadedCount++;
       if (downloadedCount === libs.length) {
         initPage();

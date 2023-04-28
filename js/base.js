@@ -94,32 +94,26 @@ function wBInChrome() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
-  for (let i = 0; i < textElements.length; i++) {
-    const element = textElements[i];
-
-    element.classList.add('loading-font');
-
-    const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
-      style: "normal",
-      weight: "400",
-      display: "swap",
-    });
-    font.load().then(() => {
-
-      document.fonts.add(font);
-
+  let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
+  for (let i = 0; i < textElements.length; i++) { textElements[i].classList.add('loading-font'); }
+  const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
+    style: "normal",
+    weight: "400",
+    display: "swap",
+  });
+  font.load().then(() => {
+    wBInChrome();
+    document.fonts.add(font);
+    for (let i = 0; i < textElements.length; i++) {
+      const element = textElements[i];
       element.classList.remove('loading-font');
       element.classList.add('white');
-
-      wBInChrome();
-    }).catch((error) => {
-      console.error(`Failed to load font: ${error}`);
-    });
-  }
+    }
+  }).catch((error) => {
+    console.error(`Failed to load font: ${error}`);
+  });
 
   if (isNotDesktop()) {
     document.querySelector('.warn-device-inside').style.display = "flex";
   }
-  //console.log(currentBrowser());
 });

@@ -1,6 +1,9 @@
 /*
 ===========================================================================================
     Author: ESSTX
+    just s1mpl3 base css for my projects
+
+    ps how to fix fout...🤦
 ===========================================================================================
 */
 
@@ -11,18 +14,27 @@
 */
 
 /*
-    ms - margin size, ps - padding size, txc - text container
+    ms - margin size, ps - padding size, tl - transparent level
 */
 :root {
-  --ms1: 1rem;
-  --ms2: 2rem;
-  --ms3: 3rem;
-  --ps1: 1rem;
-  --ps2: 2rem;
-  --ps3: 3rem;
-  --txc1: 0.5rem;
-  --txc2: 0.8rem;
-  --txc3: 1.1rem;
+  /* margin */
+  --ms1: 0.8rem;
+  --ms2: 1.1rem;
+  --ms3: 1.4rem;
+  --ms4: 1.7rem;
+  --ms5: 2.0rem;
+  /* padding */
+  --ps1: 0.8rem;
+  --ps2: 1.1rem;
+  --ps3: 1.4rem;
+  --ps4: 1.7rem;
+  --ps5: 2.0rem;
+  /* transparent */
+  --tl1: 0.5;
+  --tl2: 0.4;
+  --tl3: 0.3;
+  --tl4: 0.2;
+  --tl5: 0.1;
 }
 
 body {
@@ -55,6 +67,7 @@ body {
   background-size: 300% 100%;
   animation: loading-font-anim 2s linear 0s infinite normal forwards;
   border-radius: 0.4rem;
+  text-decoration: none;
 }
 
 body {
@@ -178,6 +191,14 @@ span {
   font-weight: 300;
 }
 
+.text-decoration-wavy {
+  text-decoration: #e63939 wavy underline;
+}
+
+.loading-font .text-decoration-wavy {
+  text-decoration: none;
+}
+
 /*
     Content box&Flex
 */
@@ -253,6 +274,14 @@ span {
   margin: var(--ms3);
 }
 
+.margl-4 {
+  margin: var(--ms4);
+}
+
+.margl-5 {
+  margin: var(--ms5);
+}
+
 /*
     Margin top
 */
@@ -266,6 +295,14 @@ span {
 
 .martop-3 {
   margin-top: var(--ms3);
+}
+
+.martop-4 {
+  margin-top: var(--ms4);
+}
+
+.martop-5 {
+  margin-top: var(--ms5);
 }
 
 /*
@@ -283,6 +320,14 @@ span {
   margin-bottom: var(--ms3);
 }
 
+.marbot-4 {
+  margin-bottom: var(--ms4);
+}
+
+.marbot-5 {
+  margin-bottom: var(--ms5);
+}
+
 /*
     Margin top bottom
 */
@@ -296,6 +341,14 @@ span {
 
 .martb-3 {
   margin: var(--ms3) 0 var(--ms3) 0;
+}
+
+.martb-4 {
+  margin: var(--ms4) 0 var(--ms4) 0;
+}
+
+.martb-5 {
+  margin: var(--ms5) 0 var(--ms5) 0;
 }
 
 /*
@@ -313,6 +366,14 @@ span {
   margin-left: var(--ms3);
 }
 
+.marleft-4 {
+  margin-left: var(--ms4);
+}
+
+.marleft-5 {
+  margin-left: var(--ms5);
+}
+
 /*
     Margin right
 */
@@ -326,6 +387,14 @@ span {
 
 .marright-3 {
   margin-right: var(--ms3);
+}
+
+.marright-4 {
+  margin-right: var(--ms4);
+}
+
+.marright-5 {
+  margin-right: var(--ms5);
 }
 
 /*
@@ -343,6 +412,14 @@ span {
   margin: 0 var(--ms3) 0 var(--ms3);
 }
 
+.marlr-4 {
+  margin: 0 var(--ms4) 0 var(--ms4);
+}
+
+.marlr-5 {
+  margin: 0 var(--ms5) 0 var(--ms5);
+}
+
 /*
     Padding global
 */
@@ -356,6 +433,14 @@ span {
 
 .padgl-3 {
   padding: var(--ps3);
+}
+
+.padgl-4 {
+  padding: var(--ps4);
+}
+
+.padgl-5 {
+  padding: var(--ps5);
 }
 
 /*
@@ -373,6 +458,14 @@ span {
   padding-top: var(--ps3);
 }
 
+.padtop-4 {
+  padding-top: var(--ps4);
+}
+
+.padtop-5 {
+  padding-top: var(--ps5);
+}
+
 /*
     Padding bottom
 */
@@ -386,6 +479,14 @@ span {
 
 .padbot-3 {
   padding-bottom: var(--ps3);
+}
+
+.padbot-4 {
+  padding-bottom: var(--ps4);
+}
+
+.padbot-5 {
+  padding-bottom: var(--ps5);
 }
 
 /*
@@ -403,6 +504,14 @@ span {
   padding: var(--ps3) 0 var(--ps3) 0;
 }
 
+.padtb-4 {
+  padding: var(--ps4) 0 var(--ps4) 0;
+}
+
+.padtb-5 {
+  padding: var(--ps5) 0 var(--ps5) 0;
+}
+
 /*
     Padding left
 */
@@ -416,6 +525,14 @@ span {
 
 .padleft-3 {
   padding-left: var(--ps3);
+}
+
+.padleft-4 {
+  padding-left: var(--ps4);
+}
+
+.padleft-5 {
+  padding-left: var(--ps5);
 }
 
 /*
@@ -433,6 +550,14 @@ span {
   padding-right: var(--ps3);
 }
 
+.padright-4 {
+  padding-right: var(--ps4);
+}
+
+.padright-5 {
+  padding-right: var(--ps5);
+}
+
 /*
     Padding left right
 */
@@ -448,19 +573,12 @@ span {
   padding: 0 var(--ps3) 0 var(--ps3);
 }
 
-/*
-    Text container
-*/
-.text-cont-1 {
-  padding: var(--txc1);
+.padlr-4 {
+  padding: 0 var(--ps4) 0 var(--ps4);
 }
 
-.text-cont-2 {
-  padding: var(--txc2);
-}
-
-.text-cont-3 {
-  padding: var(--txc3);
+.padlr-5 {
+  padding: 0 var(--ps5) 0 var(--ps5);
 }
 
 /*
@@ -590,7 +708,23 @@ span {
     Top
 */
 .top1 {
-  top: 1rem;
+  top: var(--ms1);
+}
+
+.top2 {
+  top: var(--ms2);
+}
+
+.top3 {
+  top: var(--ms3);
+}
+
+.top4 {
+  top: var(--ms4);
+}
+
+.top5 {
+  top: var(--ms5);
 }
 
 /*
@@ -629,7 +763,7 @@ span {
   width: 100%;
   height: 50px;
   background: rgba(255, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, var(--tl5));
   overflow: hidden;
   backdrop-filter: saturate(0%) blur(10px);
   box-sizing: border-box;
@@ -696,7 +830,7 @@ span {
 .glow-divider {
   width: 90%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, var(--tl5));
   position: relative;
 }
 
@@ -744,23 +878,6 @@ span {
   animation: zoomblur 1.5s linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-.social-icon-wrapper:after {
-  display: inline-block;
-  position: absolute;
-  content: url(../svg/arrow.svg);
-  width: 12px;
-  height: 12px;
-  bottom: -40px;
-  transition: all .2s;
-  filter: invert(100%);
-}
-
-.social-icon-wrapper:hover:after {
-  display: inline-block;
-  bottom: -14px;
-  transition: all .2s;
 }
 
 @keyframes zoomblur {

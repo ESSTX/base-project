@@ -1,0 +1,568 @@
+/*
+===========================================================================================
+    Author: ESSTX
+===========================================================================================
+*/
+
+/*
+===========================================================================================
+    Base
+===========================================================================================
+*/
+
+/*
+    ms - margin size, ps - padding size, txc - text container
+*/
+:root {
+  --ms1: 1rem;
+  --ms2: 2rem;
+  --ms3: 3rem;
+  --ps1: 1rem;
+  --ps2: 2rem;
+  --ps3: 3rem;
+  --txc1: 0.5rem;
+  --txc2: 0.8rem;
+  --txc3: 1.1rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes loading-font-anim {
+	0% {
+		opacity: 0.7;
+    background-position: 0% 0%;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 0.7;
+    background-position: 100% 0%;
+	}
+}
+
+.loading-font {
+  height: 100%;
+  color: transparent;
+  background-color: white;
+  background-image: linear-gradient(90deg,#ffffff,#d1d1d1,#ffffff,#d1d1d1);
+  background-size: 300% 100%;
+  animation: loading-font-anim 2s linear 0s infinite normal forwards;
+  border-radius: 0.4rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*
+    Text
+*/
+h1, h2, h3, h4, h5, h6, p, span, sup, sub, small {
+  user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+i, em {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ffedbc;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+sub {
+  font-size: 0.8rem;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: 0.8rem;
+  vertical-align: super;
+}
+
+p {
+  font-size: 1rem;
+}
+
+span {
+  display: inline-block;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.w100 {
+  font-weight: 300;
+}
+
+.w200 {
+  font-weight: 300;
+}
+
+.w300 {
+  font-weight: 300;
+}
+
+.w400 {
+  font-weight: 300;
+}
+
+/*
+    Content box&Flex
+*/
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+/*
+    Margin global
+*/
+.margl-1{
+  margin: var(--ms1);
+}
+
+.margl-2{
+  margin: var(--ms2);
+}
+
+.margl-3{
+  margin: var(--ms3);
+}
+
+/*
+    Margin sides
+*/
+.martop-1{
+  margin-top: var(--ms1);
+}
+
+.martop-2{
+  margin-top: var(--ms2);
+}
+
+.martop-3{
+  margin-top: var(--ms3);
+}
+
+.marbot-1{
+  margin-bottom: var(--ms1);
+}
+
+.marbot-2{
+  margin-bottom: var(--ms2);
+}
+
+.marbot-3{
+  margin-bottom: var(--ms3);
+}
+
+.marleft-1{
+  margin-left: var(--ms1);
+}
+
+.marleft-2{
+  margin-left: var(--ms2);
+}
+
+.marleft-3{
+  margin-left: var(--ms3);
+}
+
+.marright-1{
+  margin-right: var(--ms1);
+}
+
+.marright-2{
+  margin-right: var(--ms2);
+}
+
+.marright-3{
+  margin-right: var(--ms3);
+}
+
+/*
+    Padding global
+*/
+.padgl-1{
+  padding: var(--ps1);
+}
+
+.padgl-2{
+  padding: var(--ps2);
+}
+
+.padgl-3{
+  padding: var(--ps3);
+}
+
+/*
+    Padding sides
+*/
+.padtop-1{
+  padding-top: var(--ps1);
+}
+
+.padtop-2{
+  padding-top: var(--ps2);
+}
+
+.padtop-3{
+  padding-top: var(--ps3);
+}
+
+.padbot-1{
+  padding-bottom: var(--ps1);
+}
+
+.padbot-2{
+  padding-bottom: var(--ps2);
+}
+
+.padbot-3{
+  padding-bottom: var(--ps3);
+}
+
+.padleft-1{
+  padding-left: var(--ps1);
+}
+
+.padleft-2{
+  padding-left: var(--ps2);
+}
+
+.padleft-3{
+  padding-left: var(--ps3);
+}
+
+.padright-1{
+  padding-right: var(--ps1);
+}
+
+.padright-2{
+  padding-right: var(--ps2);
+}
+
+.padright-3{
+  padding-right: var(--ps3);
+}
+
+/*
+    Text container
+*/
+.text-cont-1 {
+  padding: var(--txc1);
+}
+
+.text-cont-2 {
+  padding: var(--txc2);
+}
+
+.text-cont-3 {
+  padding: var(--txc3);
+}
+
+/*
+    Colors
+*/
+.white{
+  color: #f5f5f5
+}
+
+.dark{
+  color: #181818
+}
+
+/*
+===========================================================================================
+    Base project
+===========================================================================================
+*/
+
+.warn-device {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.3);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	overflow: hidden;
+	backdrop-filter: saturate(0%);
+	box-sizing: border-box;
+  bottom: 0;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.loading-font {
+  height: 100%;
+  color: transparent;
+  background: linear-gradient(90deg,#2b091734 0%,#17073100 33%,#2b091734 66%,#17073100 100%);
+  background-size: 200% 200%;
+  animation: loading-font-anim 1s ease 0s infinite normal forwards;
+  border-radius: 0.4rem;
+  backdrop-filter: saturate(200%) blur(120px);
+}
+
+.bg {
+  background-color: #111;
+}
+
+.glass {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.56);
+	border: 1px solid #ffffff0e;
+	overflow: hidden;
+	border-radius: 0;
+	backdrop-filter: saturate(300%) blur(40px);
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+	box-sizing: border-box;
+  transition: all 0.1s;
+}
+
+.error-inside {
+  width: 100%;
+  height: 50px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  display: none;
+}
+
+@media (min-width: 1100px){
+  .glass {
+    width: 60rem;
+    border-radius: 1.6rem;
+ }
+}
+
+@media (min-width: 800px){
+ .warn-device {
+    bottom: -50px;
+ }
+}
+
+
+.gradient {
+	--size: calc(50vh + 50vw);
+	--speed: 40s;
+	width: var(--size);
+	height: var(--size);
+	background-image: linear-gradient(#5e37ebd9, #eb6137);
+	animation: rotate var(--speed) cubic-bezier(0.785, 0.135, 0.150, 0.860) infinite, blur-effect 4s cubic-bezier(0.785, 0.135, 0.150, 0.860) infinite alternate;
+	border-radius: 50% 70% 50% 30% / 30% 30% 80% 40%;
+	position: fixed;
+	top: calc(5% + var(--size) / 2);
+	left: calc(50% - var(--size) / 2);
+	pointer-events: none;
+}
+
+@keyframes rotate {
+	to {
+		-webkit-transform: rotate(1turn);
+		        transform: rotate(1turn);
+	}
+}
+
+@keyframes blur-effect {
+	from {
+		-webkit-filter: blur(calc(var(--size) / 10)) brightness(80%);
+		filter: blur(calc(var(--size) / 10)) brightness(80%);
+    
+	}
+
+	to {
+		-webkit-filter: blur(calc(var(--size) / 5)) brightness(100%);
+		filter: blur(calc(var(--size) / 5)) brightness(100%);
+	}
+}
+
+.glow-divider {
+	width: 100%;
+	height: 1px;
+  margin-left: 18rem;
+  margin-right: 18rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	position: relative;
+}
+
+.glow-divider::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	opacity: 0;
+	box-shadow: 0px 0px 1px 1px #fff;
+	animation: glow 6s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+	top: 0;
+	left: 0;
+	transform: scaleX(0);
+	transform-origin: left center;
+}
+
+@keyframes glow {
+	0% {
+		transform: scaleX(0);
+		opacity: 0.5;
+	}
+
+	40% {
+		transform: scaleX(100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scaleX(0);
+		opacity: 0;
+	}
+}
+
+.social-icon {
+  filter: invert(100%);
+}
+
+.social-icon-wrapper {
+  transition: all .2s;
+}
+
+.social-icon-wrapper:hover{
+  animation: zoomblur 1.5s linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.social-icon-wrapper:after {
+  display: inline-block;
+  position: absolute;
+  content: url(../svg/arrow.svg);
+  width: 12px;
+  height: 12px;
+  bottom: -40px;
+  transition: all .2s;
+  filter: invert(100%);
+}
+
+.social-icon-wrapper:hover:after{
+  display: inline-block;
+  bottom: -14px;
+  transition: all .2s;
+}
+
+@keyframes zoomblur {
+	0% {
+    transform: scale(1.2);
+    filter: blur(2px);
+  }
+  50% {
+    transform: scale(1.3);
+    filter: blur(0px);
+}
+  100% {
+      transform: scale(1.1);
+      filter: blur(0px);
+  }
+}

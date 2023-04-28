@@ -93,9 +93,8 @@ function wBInChrome() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function initPage() {
   let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
-  for (let i = 0; i < textElements.length; i++) { textElements[i].classList.add('loading-font'); }
   const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
     style: "normal",
     weight: "400",
@@ -109,11 +108,26 @@ document.addEventListener("DOMContentLoaded", function () {
       element.classList.remove('loading-font');
       element.classList.add('white');
     }
+    textElements = [];
   }).catch((error) => {
     console.error(`Failed to load font: ${error}`);
   });
-
   if (isNotDesktop()) {
     document.querySelector('.warn-device-inside').style.display = "flex";
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
+  for (let i = 0; i < textElements.length; i++) { textElements[i].classList.add('loading-font'); }
+  textElements = [];
+
+  var jqueryScript = document.createElement("script");
+  jqueryScript.setAttribute("src", "https://code.jquery.com/jquery-3.6.4.min.js");
+  jqueryScript.setAttribute("async", true);
+  document.head.appendChild(jqueryScript);
+  
+  jqueryScript.addEventListener('load', function() {
+    initPage();
+  });
 });

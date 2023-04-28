@@ -1,7 +1,7 @@
 const currentBrowser = () => {
   const userAgent = navigator.userAgent.toLowerCase();
   let browser;
-  
+
   switch (true) {
     case /edge/i.test(userAgent):
       browser = 'Edge';
@@ -94,7 +94,8 @@ const wBInChrome = () => {
 }
 
 const initPage = () => {
-  let textElements = $('h1, h2, h3, h4, h5, h6, p, span');
+
+  let textElements = $('h1, h2, h3, h4, h5, h6, p, span, input');
   const font = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2)', {
     style: "normal",
     weight: "400",
@@ -117,7 +118,7 @@ const initPage = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
+  let textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, input');
   for (let i = 0; i < textElements.length; i++) {
     textElements[i].classList.add('loading-font');
   }
